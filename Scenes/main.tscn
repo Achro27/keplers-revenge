@@ -1,82 +1,32 @@
-[gd_scene format=3 uid="uid://coh2q6v0s5s4x"]
+[gd_scene format=4 uid="uid://coh2q6v0s5s4x"]
 
-[ext_resource type="Texture2D" uid="uid://bv7jyienfb08k" path="res://Assets/icon.svg" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://bf56hw7rwfq10" path="res://Assets/untitled-pixel-art@4x.png" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://27hjomv3abmy" path="res://Scripts/map.gd" id="2_8gbba"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bo1nx"]
 texture = ExtResource("1_bo1nx")
+texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
 3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_kry3j"]
-sources/1 = SubResource("TileSetAtlasSource_jjvhh")
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_bo1nx")
 
 [node name="Main" type="Node2D" unique_id=1431962104]
 
 [node name="Map" type="TileMapLayer" parent="." unique_id=1568315219]
-tile_map_data = PackedByteArray(0, 0, 255, 255, 254, 255, 1, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 1, 0, 0, 0, 255, 255, 0, 0, 1, 0, 0, 0, 7, 0, 0, 0, 0, 0, 254, 255, 1, 0, 0, 0, 7, 0, 0, 0)
+tile_map_data = PackedByteArray("AAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAACAAEAAQAAAAAAAAACAAAAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAAAAQAAAAEAAAD//wAAAQAAAAEAAAD+/wAAAQAAAAEAAAD9/wAAAQAAAAAAAAD9////AQAAAAEAAAD+////AQAAAAEAAAACAP//AQAAAAIAAAD9//7/AQAAAAIAAAD+//7/AQAAAAIAAAD/////AQAAAAEAAAAAAP//AQAAAAIAAAABAP//AQAAAAIAAAD///7/AQAAAAIAAAA=")
 tile_set = SubResource("TileSet_kry3j")
 script = ExtResource("2_8gbba")
 
