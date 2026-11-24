@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://cm4vwrgc62ym1"]
+[gd_scene format=4 uid="uid://cm4vwrgc62ym1"]
 
 [ext_resource type="Texture2D" uid="uid://bf56hw7rwfq10" path="res://Assets/untitled-pixel-art@4x.png" id="1_26yhd"]
 [ext_resource type="Script" uid="uid://27hjomv3abmy" path="res://Scripts/map.gd" id="2_p3ir5"]
+[ext_resource type="PackedScene" uid="uid://dpjo1c4rxvprg" path="res://Scenes/entity.tscn" id="3_p3ir5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myvm1"]
 texture = ExtResource("1_26yhd")
@@ -40,6 +41,14 @@ sources/1 = SubResource("TileSetAtlasSource_myvm1")
 script = ExtResource("2_p3ir5")
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=194409885]
+tile_map_data = PackedByteArray("AAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAEAAAACAAEAAQAAAAEAAAD9/wAAAQAAAAEAAAD+/wAAAQAAAAEAAAD//wAAAQAAAAEAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAD9////AQAAAAEAAAD+////AQAAAAEAAAD/////AQAAAAEAAAD9//7/AQAAAAIAAAD+//7/AQAAAAIAAAD///7/AQAAAAIAAAAAAP//AQAAAAIAAAABAP//AQAAAAIAAAACAAAAAQAAAAIAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAD//wIAAQAAAAAAAAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_q0mm3")
 
 [node name="Entities" type="Node2D" parent="." unique_id=1413624994]
+
+[node name="Entity" parent="Entities" unique_id=721795165 instance=ExtResource("3_p3ir5")]
+position = Vector2(18, -293)
+
+[node name="Entity2" parent="Entities" unique_id=1363358182 instance=ExtResource("3_p3ir5")]
+position = Vector2(-26, -362)
+ID = 1

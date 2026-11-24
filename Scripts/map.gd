@@ -1,12 +1,12 @@
 extends Node2D
-#Test of github
+
 var entity_pre: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	entity_pre = preload("res://Scenes/entity.tscn")
 	
-	#save_map_local("user://custom_map.json")
+	save_map_local("user://custom_map.json")
 	load_map(get_map_data_local("user://custom_map.json"))
 
 
@@ -28,7 +28,7 @@ func save_map_local(save_path: String) -> void:
 		map["terrain"].append([cell.x, cell.y, $Terrain.get_cell_atlas_coords(cell).y])
 	
 	for entity in $Entities.get_children():
-		map["entities"].append([entity.position.x, entity.position.y]) #ADD ID SYSTEM
+		map["entities"].append([entity.position.x, entity.position.y, entity.ID])
 	
 	#Save that data locally
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
@@ -63,10 +63,11 @@ func load_map(map_data) -> void:
 		
 		$Terrain.set_cell(coords, 1, Vector2i(0, block_id))
 	
-	#Entities (fix id system later)
+	#Entities
 	for child in $Entities.get_children():
 		child.queue_free()
 	for entity in map_data["entities"]:
 		var new_enitity = entity_pre.instantiate()
 		new_enitity.position = Vector2i(entity[0], entity[1])
+		new_enitity.ID = entity[2]
 		$Entities.add_child(new_enitity)

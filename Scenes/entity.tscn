@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://dpjo1c4rxvprg"]
 
+[ext_resource type="Texture2D" uid="uid://camkh2kyu1uts" path="res://Assets/entityspritesheet4x.png" id="1_hsfu5"]
+[ext_resource type="Script" uid="uid://bn5met8fas5hq" path="res://Scripts/entity.gd" id="1_l7g7l"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gx7x2"]
 size = Vector2(64, 64)
 
 [node name="Entity" type="RigidBody2D" unique_id=721795165]
+script = ExtResource("1_l7g7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2032821937]
 shape = SubResource("RectangleShape2D_gx7x2")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1860649544]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1347585448]
+texture = ExtResource("1_hsfu5")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
