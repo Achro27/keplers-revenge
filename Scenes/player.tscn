@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://upxj5dp2po72"]
+
+[ext_resource type="Script" uid="uid://bokc6la3b102s" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://b0gdp8a664qgx" path="res://Assets/alien-copy-sheet.png" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://bw3581mvis6u0" path="res://Assets/alien-feet-sheet.png" id="3_vgqql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f60y1"]
+size = Vector2(60, 108)
+
+[node name="Player" type="CharacterBody2D" unique_id=721026420]
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1467006102]
+position = Vector2(-2, 10)
+shape = SubResource("RectangleShape2D_f60y1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=264614625]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Torso" type="Sprite2D" parent="." unique_id=1882009069]
+texture = ExtResource("2_6t5aa")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 128)
+
+[node name="Feet" type="Sprite2D" parent="." unique_id=2098264402]
+texture = ExtResource("3_vgqql")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 128)
+
+[node name="Blinktimer" type="Timer" parent="." unique_id=1700053292]
+wait_time = 6.0
+autostart = true
+
+[node name="Anitimer" type="Timer" parent="." unique_id=1081150576]
+wait_time = 0.1
+one_shot = true
+
+[node name="Footanitimer" type="Timer" parent="." unique_id=2086585381]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="Blinktimer" to="." method="_on_blinktimer_timeout"]
+[connection signal="timeout" from="Anitimer" to="." method="_on_anitimer_timeout"]
+[connection signal="timeout" from="Footanitimer" to="." method="_on_footanitimer_timeout"]
